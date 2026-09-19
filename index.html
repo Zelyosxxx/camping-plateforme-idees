@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idées plateformes HPA — Étude de marché 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0f2744;
+      --navy-deep: #0a1a2e;
+      --forest: #1a5c45;
+      --sage: #3d8b6e;
+      --sand: #e8dcc8;
+      --sand-light: #f7f2ea;
+      --cream: #faf8f4;
+      --terracotta: #c4704b;
+      --text: #1a2332;
+      --muted: #5a6577;
+      --white: #ffffff;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(15, 39, 68, 0.08);
+      --shadow-lg: 0 12px 48px rgba(15, 39, 68, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    header {
+      background: var(--navy-deep);
+      color: var(--white);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .logo span { color: #7ec9a8; }
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 500;
+      background: rgba(126, 201, 168, 0.15);
+      color: #7ec9a8;
+      padding: 6px 12px;
+      border-radius: 100px;
+      border: 1px solid rgba(126, 201, 168, 0.25);
+    }
+    .hero {
+      background: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 55%, #163a2e 100%);
+      color: var(--white);
+      padding: 72px 0 88px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -15%;
+      width: 60%;
+      height: 140%;
+      background: radial-gradient(ellipse, rgba(61, 139, 110, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7ec9a8;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+    }
+    .hero-meta strong { color: #7ec9a8; display: block; font-size: 1.35rem; font-weight: 700; }
+    .intro { padding: 56px 0 24px; }
+    .intro h2 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .intro p {
+      color: var(--muted);
+      max-width: 640px;
+      font-size: 1.05rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 32px 0 72px;
+    }
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 39, 68, 0.06);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .card-accent { height: 6px; width: 100%; }
+    .card-body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
+    .card-num {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      opacity: 0.7;
+    }
+    .card h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .card .tagline {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(15, 39, 68, 0.06);
+    }
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      letter-spacing: 0.02em;
+    }
+    .cta-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+    .card:hover .cta-link { text-decoration: underline; }
+    .c1 .card-accent { background: linear-gradient(90deg, #1a5c45, #3d8b6e); }
+    .c1 .card-num { color: #1a5c45; }
+    .c1 .pill { background: #e6f4ee; color: #1a5c45; }
+    .c2 .card-accent { background: linear-gradient(90deg, #1e3a5f, #3a6ea5); }
+    .c2 .card-num { color: #1e3a5f; }
+    .c2 .pill { background: #e8eef6; color: #1e3a5f; }
+    .c3 .card-accent { background: linear-gradient(90deg, #0d4f4f, #2a9a8a); }
+    .c3 .card-num { color: #0d4f4f; }
+    .c3 .pill { background: #e5f5f3; color: #0d4f4f; }
+    .c4 .card-accent { background: linear-gradient(90deg, #8b4513, #c4704b); }
+    .c4 .card-num { color: #8b4513; }
+    .c4 .pill { background: #f8ebe3; color: #8b4513; }
+    .c5 .card-accent { background: linear-gradient(90deg, #2c1810, #6b4423); }
+    .c5 .card-num { color: #6b4423; }
+    .c5 .pill { background: #f3ebe4; color: #6b4423; }
+    .context {
+      background: var(--sand-light);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 48px;
+      border: 1px solid var(--sand);
+    }
+    .context h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .context p { color: var(--muted); font-size: 0.95rem; max-width: 720px; }
+    footer {
+      border-top: 1px solid rgba(15, 39, 68, 0.08);
+      padding: 28px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 640px) {
+      .hero { padding: 48px 0 64px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap header-inner">
+      <div class="logo">HPA<span> Lab</span> · Concepts 2026</div>
+      <div class="badge">Étude de marché — 5 concepts</div>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="wrap" style="position:relative;z-index:1">
+      <div class="hero-eyebrow">Camping & hospitality tech</div>
+      <h1>Cinq plateformes pour moderniser la gérance commerciale en HPA</h1>
+      <p>Matching saisonnier, confiance (KYC / escrow), opérations, packs multi-commerces et bourse privée d’indépendants — des idées produit prêtes à explorer.</p>
+      <div class="hero-meta">
+        <div><strong>5</strong> concepts produit</div>
+        <div><strong>HPA</strong> camping &amp; loisirs</div>
+        <div><strong>2026</strong> horizon marché</div>
+      </div>
+    </div>
+  </section>
+  <main class="wrap">
+    <div class="intro">
+      <h2>Explorer les concepts</h2>
+      <p>Chaque page présente une plateforme autonome : positionnement, valeur, fonctionnalités et un scénario concret (Camping Les Pins / Julie).</p>
+    </div>
+    <div class="context">
+      <h3>Contexte marché</h3>
+      <p>Les campings français peinent à recruter et sécuriser des gérants de commerces saisonniers (bar, snack, épicerie, beauté). Les indépendants cherchent des saisons stables, des cautions transparentes et des packs clés en main. Ces cinq concepts adressent ce double besoin.</p>
+    </div>
+    <div class="grid">
+      <a href="01-campcommerc.html" class="card c1">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <div class="card-num">01 — Marketplace</div>
+          <h3>CampCommerc’</h3>
+          <p class="tagline">Matching saisonnier intelligent entre campings et gérants de commerces. Offres, profils, messagerie et calendrier de saison.</p>
+          <div class="card-footer">
+            <span class="pill">Matching</span>
+            <span class="cta-link">Voir le concept →</span>
+          </div>
+        </div>
+      </a>
+      <a href="02-gerancetrust.html" class="card c2">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <div class="card-num">02 — Confiance</div>
+          <h3>GéranceTrust</h3>
+          <p class="tagline">KYC gérants + escrow de caution : sécuriser le dépôt, libérer les fonds à la clôture, réduire les litiges.</p>
+          <div class="card-footer">
+            <span class="pill">KYC · Escrow</span>
+            <span class="cta-link">Voir le concept →</span>
+          </div>
+        </div>
+      </a>
+      <a href="03-seasonops.html" class="card c3">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <div class="card-num">03 — Ops</div>
+          <h3>SeasonOps</h3>
+          <p class="tagline">De la mise en relation à l’exécution : contrats, inventaire d’ouverture/fermeture, KPI saison et reporting camping.</p>
+          <div class="card-footer">
+            <span class="pill">Matching + Ops</span>
+            <span class="cta-link">Voir le concept →</span>
+          </div>
+        </div>
+      </a>
+      <a href="04-multicomcamp.html" class="card c4">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <div class="card-num">04 — Packs</div>
+          <h3>MultiComCamp</h3>
+          <p class="tagline">Packs multi-commerces (bar + snack + épicerie + beauté) pour campings qui veulent un seul opérateur, clés en main.</p>
+          <div class="card-footer">
+            <span class="pill">Multi-commerces</span>
+            <span class="cta-link">Voir le concept →</span>
+          </div>
+        </div>
+      </a>
+      <a href="05-indecamp-connect.html" class="card c5">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <div class="card-num">05 — Bourse privée</div>
+          <h3>IndéCamp Connect</h3>
+          <p class="tagline">Réseau privé d’indépendants HPA : offres exclusives, réputation, saisons enchaînées entre professionnels vérifiés.</p>
+          <div class="card-footer">
+            <span class="pill">Indépendants HPA</span>
+            <span class="cta-link">Voir le concept →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">Concept — étude de marché 2026</div>
+  </footer>
+</body>
+</html>
